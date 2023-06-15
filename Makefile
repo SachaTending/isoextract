@@ -36,7 +36,7 @@ ISOEXTRACT_VERSION ?= git-$(shell git describe --always --dirty)-$(shell git log
 CFG += -DISOEXTRACT_VERSION="\"$(ISOEXTRACT_VERSION)\""
 
 LDFLAGS ?= -Wl,-O1 -Wl,--as-needed
-CFLAGS ?= -DNDEBUG -O2 -D_FORTIFY_SOURCE=2
+CFLAGS ?= -DNDEBUG -O2 -D_FORTIFY_SOURCE=2 -I/usr/include/glib-2.0
 
 LIBS += $(shell pkg-config --libs $(PACKAGES))
 INCS += $(shell pkg-config --cflags $(PACKAGES))
