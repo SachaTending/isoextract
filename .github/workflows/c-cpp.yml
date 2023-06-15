@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install pkgs
+      run: sudo apt-get install libglib2.0-dev libisofs-dev
     - name: make
       run: make
     - name: Upload a Build Artifact
